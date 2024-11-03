@@ -172,19 +172,3 @@ function processFileUpload(){
 	}
 	echo "</td></tr></table>";
 }
-
-
-
-function iniSettings(){
-	$cookieLifetime = 60*60*24*7; //7 days
-	ini_set( 'session.use_only_cookies', 	true);	// Use only cookies for session IDs
-	ini_set( 'session.use_strict_mode', 	true);	// Accept only valid session IDs
-	ini_set( 'session.use_trans_sid', 		false);	// Do not attach session ID to URLs
-	ini_set( 'session.cookie_httponly', 	true);	// Refuse access to session cookies from JS
-	ini_set( 'session.sid_length', 			48);			// Session ID length
-	ini_set( 'session.cookie_samesite', 	"strict");		// Strict samesite
-	ini_set( 'session.gc_maxlifetime', 		$cookieLifetime);	// Cookie lifetime
-	ini_set( 'session.cookie_lifetime', 	$cookieLifetime);	// Cookie lifetime
-	session_set_cookie_params($cookieLifetime);
-
-}
